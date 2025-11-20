@@ -1,0 +1,65 @@
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+}
+
+.reset-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  padding-top: 3rem;
+}
+
+.screen {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+}
+
+.content.next .screen {
+  animation-name: slideInFromRight;
+}
+
+.content.previous .screen {
+  animation-name: slideInFromLeft;
+}
+
+.full-width {
+  width: 100%;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
