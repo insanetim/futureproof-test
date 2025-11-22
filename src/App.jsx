@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import EmailSection from "./components/EmailSection"
-import QuestionSection from "./components/QustionSection"
+import QuestionSection from "./components/QuestionSection"
 import ResultSection from "./components/ResultSection"
 import { INITIAL_STATE, QUESTIONS } from "./constants"
 import { loadLocalStorage, saveLocalStorage } from "./lib/localStorage"
