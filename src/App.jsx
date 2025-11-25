@@ -46,9 +46,10 @@ function App() {
     }))
   }
 
-  const screens = [
+  const sections = [
     ...QUESTIONS.map(question => (
       <QuestionSection
+        key={question.id}
         question={question}
         userAnswer={userData.answers[question.id]}
         setAnswer={setAnswer}
@@ -56,11 +57,13 @@ function App() {
       />
     )),
     <EmailSection
+      key="email"
       userEmail={userData.email}
       setUserEmail={setUserEmail}
       onNext={nextStep}
     />,
     <ResultSection
+      key="result"
       email={userData.email}
       answers={userData.answers}
     />,
@@ -73,7 +76,7 @@ function App() {
   return (
     <div className="container">
       <div className={`content ${direction}`}>
-        {screens[userData.currentStep]}
+        {sections[userData.currentStep]}
       </div>
       <hr />
       <div className="reset-button-container">
